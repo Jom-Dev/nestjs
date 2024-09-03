@@ -2,7 +2,9 @@ import { Body, Controller, Delete, Get, NotFoundException, Param, ParseIntPipe, 
 import { CreateNinjaDto } from './dto/create-ninja.dto';
 import { UpdateNinjaDto } from './dto/update-ninja.dto';
 import { NinjasService } from './ninjas.service';
+import { ApiTags } from '@nestjs/swagger';
 
+@ApiTags('ninjas')
 @Controller('ninjas')
 export class NinjasController {
     constructor(private readonly ninjasService: NinjasService) {}
