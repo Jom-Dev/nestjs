@@ -6,11 +6,11 @@ import { UsersModule } from './users/users.module';
 import { ConfigModule } from '@nestjs/config';
 import { TodosModule } from './todos/todos.module';
 import { TypeOrmModule } from '@nestjs/typeorm';
-import config from 'ormconfig'; 
+import config from 'ormconfig';
 
 
 @Module({
-  imports: [TypeOrmModule.forRoot(config), 
+  imports: [TypeOrmModule.forRoot(config),
   ConfigModule.forRoot(), NinjasModule, UsersModule, TodosModule],
   controllers: [AppController],
   providers: [AppService],

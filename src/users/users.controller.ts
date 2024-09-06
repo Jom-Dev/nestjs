@@ -12,14 +12,14 @@ export class UsersController {
   @ApiOkResponse({ type: User, isArray: true })
   @ApiQuery({ name: 'name', required: false })
   @Get()
-  getUsers(@Query('name') name: string): User[] {
+  getUsers(@Query('name') name: string) {
     return this.usersService.findAll(name);
   }
 
   @ApiOkResponse({ type: User, description: 'the user' })
   @ApiNotFoundResponse()
   @Get(':id')
-  getUserById(@Param('id', ParseIntPipe) id : number): User {
+  getUserById(@Param('id', ParseIntPipe) id : number) {
     // TODO auto parse to number
     console.log('--->', typeof id);
 
@@ -35,7 +35,7 @@ export class UsersController {
   @ApiCreatedResponse({ type: User })
   @ApiBadRequestResponse()
   @Post()
-  createUser(@Body() createUserDto: CreateUserDto): User {
+  createUser(@Body() createUserDto: CreateUserDto) {
     return this.usersService.createUser(createUserDto);
   }
 }
