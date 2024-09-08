@@ -1,10 +1,11 @@
 import { MysqlConnectionOptions } from "typeorm/driver/mysql/MysqlConnectionOptions";
+import { PostgresConnectionOptions } from "typeorm/driver/postgres/PostgresConnectionOptions";
 
-const config: MysqlConnectionOptions = {
-    type: 'mysql',
+const config: PostgresConnectionOptions = {
+    type: 'postgres',
     host: 'localhost',
-    port: 3306,
-    username: 'citc',
+    port: 5432,
+    username: 'postgres',
     password: 'sysdev',
     database: 'nestjs',
     entities: ['dist/**/*.entity.js'],

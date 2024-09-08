@@ -11,6 +11,11 @@ export class User {
   @Column()
   name: string;
 
+  @ApiProperty()
   @Column()
   age: number;
+
+  @ApiProperty()
+  @Column()
+  address: string;
 }
