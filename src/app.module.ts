@@ -7,10 +7,11 @@ import { ConfigModule } from '@nestjs/config';
 import { TodosModule } from './todos/todos.module';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { dataSourceOptions } from 'db/data-source';
+import { EmployeesModule } from './employees/employees.module';
 
 @Module({
   imports: [TypeOrmModule.forRoot(dataSourceOptions),
-  ConfigModule.forRoot(), NinjasModule, UsersModule, TodosModule],
+  ConfigModule.forRoot(), NinjasModule, UsersModule, TodosModule, EmployeesModule],
   controllers: [AppController],
   providers: [AppService],
 })

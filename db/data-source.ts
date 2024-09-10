@@ -9,6 +9,8 @@ export const dataSourceOptions: DataSourceOptions = {
     database: 'nestjs',
     entities: ['dist/**/*.entity.js'],
     migrations: ['dist/db/migrations/*.js'],
+    logging: true,
+    synchronize: true
 }
 
 const dataSource = new DataSource(dataSourceOptions);
