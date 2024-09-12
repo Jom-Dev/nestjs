@@ -16,11 +16,10 @@ export class AppService {
    ) {}
 
    async seed() {
-    const ceo = this.employeeRepo.create({ name: 'John' });
+    const ceo = this.employeeRepo.create({ name: 'Mr CEO' });
     await this.employeeRepo.save(ceo);
 
     const ceoContactInfo = this.contactInfoRepo.create({ email: 'test@test.com' });
-    
     ceoContactInfo.employee = ceo;
     await this.contactInfoRepo.save(ceoContactInfo);
    }
