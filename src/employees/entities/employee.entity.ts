@@ -14,6 +14,8 @@ export class Employee {
   @OneToOne(() => ContactInfo, (contactInfo) => contactInfo.employee)
   contactInfo: ContactInfo;
 
+  // to make task always include in query even not included in relations[] typeorm
+  // @OneToMany(() => Task, (task) => task.employee, { eager: true })
   @OneToMany(() => Task, (task) => task.employee)
   tasks: Task[];
 
